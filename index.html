@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <table style="width:100%">
+        <tr>
+          <td>
+              <div style="padding-left: 20rem; padding-top: 15rem;">
+            <h1>John Doe</h1>
+            <div class="tree">
+              <h2>Home</h2>
+              <ul>
+                <li>
+                  <h3>school</h3>
+                  <ul>
+                    <li><a href="https://seqta.com.au/">SEQTA</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <h3>media</h3>
+                  <ul>
+                    <li><a href="https://youtube.com">YouTube</a></li>
+                    <li><a href="https://www.twitch.tv/">Twitch</a></li>
+                    <li><a href="https://www.reddit.com/">Reddit</a></li>
+                    <li><a href="https://soundcloud.com/">SoundCloud</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <h3>mail</h3>
+                  <ul>
+                    <li><a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a></li>
+                    <li><a href="https://mail.yahoo.com/d/folders/1">Yahoo</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <h3>other</h3>
+                  <ul>
+                    <li><a href="https://github.com/Snaiel/">GitHub</a></li>
+                    <li><a href="https://www.tradingview.com/chart">TradingView</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <form action="https://google.com/search" method="GET">
+              <h1>search: </h1>
+              <input type="search" name="q" autofocus="autofocus">
+            </form>
+              </div>
+          </td>
+          <td>
+              <div  style=" margin-top: 10rem;">
+                <h1>Notes:</h1>
+                <br>
+                <textarea id="text2" rows="20" cols="50" style="resize: none; font-family: 'Roboto Mono'; font-size: 18px; background-color: var(--background); color: white;" spellcheck="false">                    
+                </textarea>
+              </div>
+          </td>
+      </table>
+    
+      
+    <script>
+      window.onkeyup = function() {
+         $('textarea').each(function(){    
+              var id = $(this).attr('id');
+              var value = $(this).val();
+             localStorage.setItem(id, value);
+          }); 
+      }
+      window.onload = function() { 
+          $('textarea').each(function(){    
+             var id = $(this).attr('id');
+             var text2 = localStorage.getItem(id);
+             if (text2 !== null) $('#'+id).val(text2);
+          }); 
+      }
+      </script>
+    
+
+  </body>
+</html>
